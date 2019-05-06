@@ -18,8 +18,11 @@
             <div class="flex-container">
               <div class="title"><a class="entry" @click="goAnnouncement(announcement)">
                 {{announcement.title}}</a></div>
-              <div class="date">{{announcement.create_time | localtime }}</div>
-              <div class="creator"> By {{announcement.created_by.username}}</div>
+              <div>
+                <div class="creator"> By {{announcement.created_by.username}}</div>
+                <div class="date">{{announcement.create_time | localtime }}</div>
+              </div>
+
             </div>
           </li>
         </ul>
@@ -144,12 +147,14 @@
         }
         .creator {
           flex: none;
-          width: 200px;
+          width: 140px;
           text-align: center;
         }
         .date {
+
+          font-size: 12px;
           flex: none;
-          width: 200px;
+          width: 140px;
           text-align: center;
         }
       }
