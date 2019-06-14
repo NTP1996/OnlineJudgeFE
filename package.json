@@ -1,8 +1,8 @@
 {
   "name": "onlinejudge",
   "version": "2.0.0",
-  "description": "onlinejudge front end",
-  "author": "zemal <rawidn@163.com>",
+  "description": "HHU onlinejudge 前端",
+  "author": "zemal <rawidn@163.com>,NTP<975670476@qq.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",

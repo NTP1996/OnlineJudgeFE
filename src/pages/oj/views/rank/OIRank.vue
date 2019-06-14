@@ -2,7 +2,7 @@
   <Row type="flex" justify="space-around">
     <Col :span="22">
     <Panel :padding="10">
-      <div slot="title">OI Ranklist</div>
+      <div slot="title">OI 排行榜</div>
       <div class="echarts">
         <ECharts :options="options" ref="chart" auto-resize></ECharts>
       </div>

@@ -22,11 +22,9 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.DefinePlugin({
       'process.env': config.dev.env
     }),
-    // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
 
-    // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: config.build.ojIndex,
       template: config.build.ojTemplate,

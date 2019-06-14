@@ -2,12 +2,12 @@
   <Row type="flex">
     <Col :span="24">
     <Panel id="contest-card" shadow>
-      <div slot="title">{{query.rule_type === '' ? 'All' : query.rule_type}} Contests</div>
+      <div slot="title">{{query.rule_type === '' ? '所有' : query.rule_type}}比赛</div>
       <div slot="extra">
         <ul class="filter">
           <li>
             <Dropdown @on-click="onRuleChange">
-              <span>{{query.rule_type === '' ? 'Rule' : query.rule_type}}
+              <span>{{query.rule_type === '' ? '规则' : query.rule_type}}
                 <Icon type="arrow-down-b"></Icon>
               </span>
               <Dropdown-menu slot="list">
@@ -19,14 +19,14 @@
           </li>
           <li>
             <Dropdown @on-click="onStatusChange">
-              <span>{{query.status === '' ? 'Status' : CONTEST_STATUS_REVERSE[query.status].name}}
+              <span>{{query.status === '' ? '状态' : CONTEST_STATUS_REVERSE[query.status].name}}
                 <Icon type="arrow-down-b"></Icon>
               </span>
               <Dropdown-menu slot="list">
                 <Dropdown-item name="">All</Dropdown-item>
-                <Dropdown-item name="0">UnderWay</Dropdown-item>
-                <Dropdown-item name="1">Not Started</Dropdown-item>
-                <Dropdown-item name="-1">Ended</Dropdown-item>
+                <Dropdown-item name="0">正在进行</Dropdown-item>
+                <Dropdown-item name="1">未开始</Dropdown-item>
+                <Dropdown-item name="-1">已结束</Dropdown-item>
               </Dropdown-menu>
             </Dropdown>
           </li>

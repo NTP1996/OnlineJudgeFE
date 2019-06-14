@@ -33,7 +33,7 @@ import 'echarts/lib/component/tooltip'
 import 'echarts/lib/component/toolbox'
 import 'echarts/lib/component/markPoint'
 
-// register global utility filters.
+// 注册全局过滤器
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })

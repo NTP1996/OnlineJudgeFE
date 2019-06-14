@@ -26,7 +26,6 @@ const webpackConfig = merge(baseWebpackConfig, {
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
   plugins: [
-    // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
       'process.env': config.build.env
     }),
@@ -51,9 +50,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       sourceMap: true
     }),
 
-    // keep module.id stable when vender modules does not change
     new webpack.HashedModuleIdsPlugin(),
-    // split vendor js into its own file
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       chunks: ['oj', 'admin'],
@@ -85,7 +82,6 @@ const webpackConfig = merge(baseWebpackConfig, {
     ]),
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
-    // see https://github.com/ampedandwired/html-webpack-plugin
     // oj
     new HtmlWebpackPlugin({
       filename: config.build.ojIndex,
@@ -97,7 +93,6 @@ const webpackConfig = merge(baseWebpackConfig, {
         collapseWhitespace: true,
         removeAttributeQuotes: true
         // more options:
-        // https://github.com/kangax/html-minifier#options-quick-reference
       }
     }),
     // admin
@@ -110,8 +105,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         removeComments: true,
         collapseWhitespace: true,
         removeAttributeQuotes: true
-        // more options:
-        // https://github.com/kangax/html-minifier#options-quick-reference
+
       }
     })
   ]

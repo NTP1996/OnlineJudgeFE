@@ -31,63 +31,63 @@
         </div>
       </el-card>
       <panel :title="$t('m.System_Overview')" v-if="isSuperAdmin">
-        <p>{{$t('m.DashBoardJudge_Server')}}:  {{infoData.judge_server_count}}</p>
-        <p>{{$t('m.HTTPS_Status')}}:
-          <el-tag :type="https ? 'success' : 'danger'" size="small">
-            {{ https ? 'Enabled' : 'Disabled'}}
-          </el-tag>
-        </p>
-        <p>{{$t('m.Force_HTTPS')}}:
-          <el-tag :type="forceHttps ? 'success' : 'danger'" size="small">
-            {{forceHttps ? 'Enabled' : 'Disabled'}}
-          </el-tag>
-        </p>
-        <p>{{$t('m.CDN_HOST')}}:
-          <el-tag :type="cdn ? 'success' : 'warning'" size="small">
-            {{cdn ? cdn : 'Not Use'}}
-          </el-tag>
-        </p>
+<!--        <p>{{$t('m.DashBoardJudge_Server')}}:  {{infoData.judge_server_count}}</p>-->
+<!--        <p>{{$t('m.HTTPS_Status')}}:-->
+<!--          <el-tag :type="https ? 'success' : 'danger'" size="small">-->
+<!--            {{ https ? 'Enabled' : 'Disabled'}}-->
+<!--          </el-tag>-->
+<!--        </p>-->
+<!--        <p>{{$t('m.Force_HTTPS')}}:-->
+<!--          <el-tag :type="forceHttps ? 'success' : 'danger'" size="small">-->
+<!--            {{forceHttps ? 'Enabled' : 'Disabled'}}-->
+<!--          </el-tag>-->
+<!--        </p>-->
+<!--        <p>{{$t('m.CDN_HOST')}}:-->
+<!--          <el-tag :type="cdn ? 'success' : 'warning'" size="small">-->
+<!--            {{cdn ? cdn : 'Not Use'}}-->
+<!--          </el-tag>-->
+<!--        </p>-->
       </panel>
     </el-col>
 
     <el-col :md="14" :lg="16" v-if="isSuperAdmin">
       <div class="info-container">
-        <info-card color="#909399" icon="el-icon-fa-users" message="Total Users" iconSize="30px" class="info-item"
+        <info-card color="#909399" icon="el-icon-fa-users" message="用户数" iconSize="30px" class="info-item"
                    :value="infoData.user_count"></info-card>
-        <info-card color="#67C23A" icon="el-icon-fa-list" message="Today Submissions" class="info-item"
+        <info-card color="#67C23A" icon="el-icon-fa-list" message="总提交数" class="info-item"
                    :value="infoData.today_submission_count"></info-card>
-        <info-card color="#409EFF" icon="el-icon-fa-trophy" message="Recent Contests" class="info-item"
+        <info-card color="#409EFF" icon="el-icon-fa-trophy" message="近期的比赛" class="info-item"
                    :value="infoData.recent_contest_count"></info-card>
       </div>
-      <panel style="margin-top: 5px">
-        <span slot="title" v-loading="loadingReleases">Release Notes
-        <el-popover placement="right" trigger="hover">
-          <i slot="reference" class="el-icon-fa-question-circle import-user-icon"></i>
-          <p>Please upgrade to the latest version to enjoy the new features. </p>
-          <p>Reference: <a href="http://docs.onlinejudge.me/#/onlinejudge/guide/upgrade" target="_blank">
-          http://docs.onlinejudge.me/#/onlinejudge/guide/upgrade</a>
-          </p>
-        </el-popover>
-        </span>
+<!--      <panel style="margin-top: 5px">-->
+<!--        <span slot="title" v-loading="loadingReleases">Release Notes-->
+<!--        <el-popover placement="right" trigger="hover">-->
+<!--          <i slot="reference" class="el-icon-fa-question-circle import-user-icon"></i>-->
+<!--          <p>Please upgrade to the latest version to enjoy the new features. </p>-->
+<!--          <p>Reference: <a href="http://docs.onlinejudge.me/#/onlinejudge/guide/upgrade" target="_blank">-->
+<!--          http://docs.onlinejudge.me/#/onlinejudge/guide/upgrade</a>-->
+<!--          </p>-->
+<!--        </el-popover>-->
+<!--        </span>-->
 
-        <el-collapse v-model="activeNames" v-for="(release, index) of releases" :key="'release' + index">
-          <el-collapse-item :name="index+1">
-            <template slot="title">
-              <div v-if="release.new_version">{{release.title}}
-                <el-tag size="mini" type="success">New Version</el-tag>
-              </div>
-              <span v-else>{{release.title}}</span>
-            </template>
-            <p>Level: {{release.level}}</p>
-            <p>Details: </p>
-            <div class="release-body">
-              <ul v-for="detail in release.details" :key="detail">
-                <li v-html="detail"></li>
-              </ul>
-            </div>
-          </el-collapse-item>
-        </el-collapse>
-      </panel>
+<!--        <el-collapse v-model="activeNames" v-for="(release, index) of releases" :key="'release' + index">-->
+<!--          <el-collapse-item :name="index+1">-->
+<!--            <template slot="title">-->
+<!--              <div v-if="release.new_version">{{release.title}}-->
+<!--                <el-tag size="mini" type="success">New Version</el-tag>-->
+<!--              </div>-->
+<!--              <span v-else>{{release.title}}</span>-->
+<!--            </template>-->
+<!--            <p>Level: {{release.level}}</p>-->
+<!--            <p>Details: </p>-->
+<!--            <div class="release-body">-->
+<!--              <ul v-for="detail in release.details" :key="detail">-->
+<!--                <li v-html="detail"></li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--          </el-collapse-item>-->
+<!--        </el-collapse>-->
+<!--      </panel>-->
     </el-col>
   </el-row>
 </template>

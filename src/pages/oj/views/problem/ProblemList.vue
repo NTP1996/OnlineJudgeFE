@@ -2,12 +2,12 @@
   <Row type="flex" :gutter="18">
     <Col :span=19>
     <Panel shadow>
-      <div slot="title">Problem List</div>
+      <div slot="title">问题列表</div>
       <div slot="extra">
         <ul class="filter">
           <li>
             <Dropdown @on-click="filterByDifficulty">
-              <span>{{query.difficulty === '' ? 'Difficulty' : query.difficulty}}
+              <span>{{query.difficulty === '' ? '难度' : query.difficulty}}
                 <Icon type="arrow-down-b"></Icon>
               </span>
               <Dropdown-menu slot="list">
@@ -34,7 +34,7 @@
           <li>
             <Button type="info" @click="onReset">
               <Icon type="refresh"></Icon>
-              Reset
+            刷新
             </Button>
           </li>
         </ul>
